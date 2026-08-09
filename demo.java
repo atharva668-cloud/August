@@ -1,32 +1,37 @@
-interface Computer {
-    public abstract void laptop(); 
-       
-    
-}
-class Employe implements Computer {
-    public void laptop () {
-        System.out.println("Write, compile,run");
-    }
-}
-
-class Att implements Computer{
-    public void laptop () {
-        System.out.println("Write, compile,run, Faster..");
-    }
-}
-
-class developer  {
-    public void DevApp(Computer  emp) {
-        emp.laptop();
-    }
-}
+// Exception handling in java 
 public class Demo {
-    public static void main(String []args ) {
+    public static void main(String []args) {
+        int a = 12;
+        int b = 0;
+        int num [] = new int[5];
+        String str =  null;
 
-        Computer emp = new Employe();
-        Computer obj1 = new Att();
+        try 
+        {
+            System.out.println(str.length());
+            System.out.println(num[5]);
+            System.out.println(a /  b);
+        }
 
-            developer obj = new developer();
-            obj.DevApp(obj1);
+        catch (NullPointerException e) {
+            System.out.println("Invalid Details." + e);
+        }
+
+        catch (ArithmeticException e ) {
+            System.out.println("Cant't divided by zero" + e);
+        }
+
+        catch (ArrayIndexOutOfBoundsException e ) {
+            System.out.println("Stay in your limit" + e);
+        }
+
+        catch (Exception e) 
+        {
+            System.out.println("Something Went Wrong.." + e );
+        }
+
+        System.out.println(a);
+        System.out.println("Hey.. !");
+
     }
 }
